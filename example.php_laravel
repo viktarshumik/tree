@@ -1,0 +1,28 @@
+	<div onclick="tree_toggle(arguments[0])">
+	
+		<div>My Activation Code</div>
+		{{--*/ $level = 0 /*--}}
+		<?php $stringlen = strlen($user->activation_code) ?>
+		@for($i=0; $i < $stringlen; $i++)
+			@if($user->activation_code[$i] >= '0' && $user->activation_code[$i] <='9')
+				<ul class="NodeContainer">
+					<li class="Node ExpandLeaf">
+						<div class="NodeExpand"></div>
+						<div class="NodeName">{{ $user->activation_code[$i] }}</div>
+					</li>
+				</ul>
+				</li>
+				{{--*/ $level = $level-1 /*--}}
+			@else
+				<ul class="NodeContainer">
+					<li class="Node ExpandOpen">
+						<div class="NodeExpand"></div>
+						<div class="NodeName">{{ $user->activation_code[$i] }}</div>
+						{{--*/ $level = $level+1 /*--}}
+			@endif
+		@endfor
+		@for($i = $level; $i >= 0; $i--)
+			</li>
+			</ul>
+		@endfor
+	</div>

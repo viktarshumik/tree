@@ -1,0 +1,53 @@
+/*Node*/
+.Node {
+	margin-left: 15px; /*move to left*/
+	/*lines*/
+	background-image: url("../img/i.gif");
+	background-position: top left;
+	background-repeat: repeat-y;
+}
+.NodeRoot {
+	margin-left: 0;
+}
+
+/*NodeExpand*/
+.NodeExpand {
+	width: 15px;
+	height: 15px;
+	float: left; /*fixed size and always from left*/
+}
+
+/*imgs for expand*/
+.ExpandOpen .NodeExpand{	/*for all NodeExpand inside ExpandOpen */
+	background-image: url("../img/minus.gif");
+}
+.ExpandClose .NodeExpand {
+	background-image: url("../img/plus.gif");
+}
+.ExpandLeaf  .NodeExpand{
+	background-image: url("../img/leaf.gif");
+}
+
+/*Hide/Show Container*/
+.ExpandOpen .NodeContainer {
+	display: block;
+}
+.ExpandClose .NodeContainer {
+	display: none;
+}
+
+/*NodeName*/
+.NodeName {
+	margin-left: 15px;	/*place for expander*/
+	min-height: 15px;
+}
+
+/*NodeContainer*/
+.NodeContainer {
+	padding: 0;
+	margin: 0;
+}
+.NodeContainer li{
+	list-style-type: none; /*remove standard dots for list*/
+	
+}
